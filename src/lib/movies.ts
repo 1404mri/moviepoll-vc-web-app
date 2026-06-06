@@ -13,43 +13,6 @@ export type Movie = {
 // Edit this list before sharing the poll. If you change it after ballots exist, reset the ballots first.
 export const movies = [
   {
-    id: "wicked",
-    title: "Wicked",
-    year: 2024,
-    director: "Jon M. Chu",
-    runtimeMinutes: 160,
-    description: "The story of Elphaba and Glinda before the events of The Wizard of Oz.",
-    infoUrl: "https://www.themoviedb.org/movie/402431",
-    trailerUrl: "https://www.youtube.com/watch?v=6COmYeLsz4c",
-    thumbnailUrl: "https://image.tmdb.org/t/p/w342/c5Tqxeo1UpBvnAc3csUm7j3hlQl.jpg"
-  },
-  {
-    id: "michael",
-    title: "Michael",
-    year: 2026,
-    director: "Antoine Fuqua",
-    runtimeMinutes: 150,
-    description: "A biographical drama chronicling the life and career of Michael Jackson.",
-    infoUrl: "https://www.themoviedb.org/movie/1087388-michael",
-    trailerUrl: "https://www.youtube.com/watch?v=3zOLzsbOleM",
-    thumbnailUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Michael_%282026_film_poster%29.png/250px-Michael_%282026_film_poster%29.png"
-  },
-  {
-    id: "project-hail-mary",
-    title: "Project Hail Mary",
-    year: 2026,
-    director: "Phil Lord & Christopher Miller",
-    runtimeMinutes: 140,
-    description: "A lone astronaut wakes up far from Earth with the fate of humanity in his hands.",
-    infoUrl: "https://www.themoviedb.org/movie/950387",
-    trailerUrl: "https://www.youtube.com/watch?v=m08TxIsFTRI",
-    thumbnailUrl: "https://theknockturnal.com/wp-content/uploads/2026/02/611288-project-hail-mary-0-230-0-345-crop.jpg"
-  }
-] as const satisfies readonly Movie[];
-export const movieIds = movies.map((movie) => movie.id);
-
-export const allmovies = [
-  {
     id: "obsession",
     title: "Obsession",
     year: 2026,
@@ -236,7 +199,9 @@ export const allmovies = [
     trailerUrl: "https://www.youtube.com/watch?v=cqGjhVJWtEg",
     thumbnailUrl: "https://image.tmdb.org/t/p/w342/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg"
   }
-];
+] as const satisfies readonly Movie[];
+export const movieIds = movies.map((movie) => movie.id);
+
 
 export function getMovieTitle(movieId: string) {
   return movies.find((movie) => movie.id === movieId)?.title ?? movieId;
